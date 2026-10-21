@@ -55,7 +55,7 @@ function openGallery(name) {
     thumb.setAttribute("aria-current", String(index === currentIndex));
     const preview = document.createElement("img");
     preview.src = image.src;
-    preview.alt = "";
+    preview.alt = image.alt;
     preview.width = image.width;
     preview.height = image.height;
     preview.loading = "lazy";

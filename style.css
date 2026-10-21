@@ -313,3 +313,77 @@ html.motion-ready [data-text-reveal].is-visible .copy-word { opacity: 1; transfo
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   html.motion-ready [data-reveal], html.motion-ready [data-text-reveal] .copy-word { opacity: 1; transform: none; }
 }
+
+/* Shared pages, privacy controls, and mobile contact action */
+[hidden] { display: none !important; }
+.aux-page { min-height: 100vh; padding-bottom: 24px; background: #080808; }
+.aux-header { display: flex; min-height: 82px; align-items: center; justify-content: space-between; gap: 24px; padding: 14px max(24px, calc((100vw - 1240px) / 2)); border-bottom: 1px solid var(--line); }
+.aux-header nav { display: flex; flex-wrap: wrap; gap: 22px; color: #d6d6d6; font-size: 13px; }
+.aux-header nav a:hover, .aux-footer a:hover { color: var(--white); }
+.legal-main { width: min(820px, calc(100% - 40px)); margin: 0 auto; padding: clamp(55px, 8vw, 100px) 0 90px; }
+.legal-main > .eyebrow { color: var(--red); }
+.legal-main h1 { margin: 0 0 18px; font-size: clamp(42px, 7vw, 68px); }
+.aux-lead { max-width: 680px; margin: 0 0 30px; color: #c8c8c8; font-size: 16px; }
+.legal-updated { color: #969696; font-size: 12px; }
+.legal-copy h2, .contact-details h2 { margin: 36px 0 10px; font-size: 24px; }
+.legal-copy p, .legal-copy li { color: #c8c8c8; font-size: 14px; line-height: 1.8; }
+.legal-copy a, .contact-details a, .confirmation > p a { color: #fff; text-decoration: underline; text-decoration-color: var(--red); text-underline-offset: 4px; }
+.confirmation { min-height: 60vh; }
+.confirmation .button { margin: 4px 0 24px; text-decoration: none; }
+.contact-form { display: grid; gap: 18px; padding: clamp(22px, 5vw, 38px); border: 1px solid var(--line); background: #111; }
+.form-field { display: grid; gap: 7px; }
+.form-field label { font-size: 13px; font-weight: 700; }
+.form-field input, .form-field textarea { width: 100%; min-height: 49px; padding: 12px 14px; border: 1px solid #555; border-radius: 0; background: #080808; color: var(--white); font: inherit; font-size: 14px; }
+.form-field textarea { min-height: 135px; resize: vertical; }
+.form-field input:focus, .form-field textarea:focus { border-color: #ff5b63; outline: 2px solid #ff5b63; outline-offset: 2px; }
+.form-field [aria-invalid="true"] { border-color: #ff7078; }
+.field-error { min-height: 18px; color: #ff979c; font-size: 12px; }
+.form-status { min-height: 24px; margin: 0; color: #e6e6e6; font-size: 13px; }
+.form-note { margin: 0; color: #a8a8a8; font-size: 12px; line-height: 1.7; }
+.form-note a { text-decoration: underline; text-decoration-color: var(--red); text-underline-offset: 3px; }
+.contact-form button:disabled { cursor: wait; opacity: .72; }
+.contact-details { margin-top: 35px; color: #c8c8c8; }
+.contact-details h2 { margin-top: 0; color: #fff; }
+.contact-details p, .contact-details address { font-size: 14px; font-style: normal; }
+.aux-footer { display: flex; flex-wrap: wrap; justify-content: center; gap: 13px 24px; padding: 23px 20px; border-top: 1px solid var(--line); color: #c6c6c6; font-size: 12px; }
+.aux-footer button, .footer-legal button { padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.footer-legal { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px 18px; }
+.footer-bottom { align-items: center; }
+.map-placeholder { display: grid; min-height: 400px; place-content: center; justify-items: center; gap: 14px; padding: 24px; background: linear-gradient(135deg,#d8d8d8,#bcbcbc); color: #191919; text-align: center; }
+.map-placeholder p { margin: 0; font-weight: 700; }
+.map-placeholder .button { color: #fff; }
+.map-status { max-width: 360px; color: #333; font-size: 12px; }
+.mobile-sticky-cta { display: none; }
+.cookie-banner { position: fixed; z-index: 100; right: 20px; bottom: 20px; left: 20px; display: flex; max-width: 930px; align-items: center; justify-content: space-between; gap: 22px; margin-inline: auto; padding: 18px 20px; border: 1px solid #4c4c4c; background: #171717; box-shadow: 0 14px 50px rgba(0,0,0,.55); }
+.cookie-copy { max-width: 580px; }
+.cookie-copy strong { font-family: var(--heading); font-size: 18px; }
+.cookie-copy p { margin: 4px 0 0; color: #c7c7c7; font-size: 11px; line-height: 1.55; }
+.cookie-copy a { color: #fff; text-decoration: underline; text-decoration-color: var(--red); text-underline-offset: 3px; }
+.cookie-actions { display: flex; flex: 0 0 auto; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.cookie-actions .button { min-height: 42px; padding: 9px 12px; font-size: 11px; }
+
+@media (max-width: 720px) {
+  .aux-header { min-height: 68px; padding: 10px 18px; }
+  .aux-header nav { gap: 13px; font-size: 11px; }
+  .legal-main { width: calc(100% - 38px); padding-top: 58px; padding-bottom: 88px; }
+  .legal-main h1 { font-size: clamp(39px, 10vw, 52px); }
+  .aux-lead { font-size: 14px; }
+  .footer-bottom { align-items: flex-start; flex-direction: column; }
+  .footer-legal { justify-content: flex-start; }
+  .map-placeholder, .map-frame iframe { min-height: 330px; height: 330px; }
+  .mobile-sticky-cta { position: fixed; z-index: 45; right: 0; bottom: 0; left: 0; display: flex; min-height: calc(58px + env(safe-area-inset-bottom)); align-items: center; justify-content: center; padding: 12px 20px calc(12px + env(safe-area-inset-bottom)); background: var(--red); box-shadow: 0 -8px 30px rgba(0,0,0,.28); color: #fff; font-size: 13px; font-weight: 800; text-align: center; }
+  .whatsapp-float { bottom: calc(72px + env(safe-area-inset-bottom)); }
+  .cookie-banner { right: 10px; bottom: calc(66px + env(safe-area-inset-bottom)); left: 10px; display: grid; gap: 12px; padding: 15px; }
+  .cookie-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .cookie-actions .button { width: 100%; min-height: 43px; }
+  .aux-page .mobile-sticky-cta { display: flex; }
+  .aux-page[data-no-mobile-cta] .mobile-sticky-cta { display: none; }
+  .aux-page { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 390px) {
+  .aux-header { padding-inline: 14px; }
+  .aux-header nav { gap: 9px; font-size: 10px; }
+  .legal-main { width: calc(100% - 30px); }
+  .contact-form { padding: 18px; }
+  .cookie-actions { grid-template-columns: 1fr; }
+}
